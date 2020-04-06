@@ -19,8 +19,6 @@ function! goimports#Run() abort
   let l:linecount = len(readfile(l:tmpname)) - line('$')
   if l:err == 0
     call s:rename_file(l:tmpname, expand('%'))
-  else
-    call s:handle_errors(expand('%'), l:out)
   endif
   call delete(l:tmpname)
   call winrestview(l:view)
